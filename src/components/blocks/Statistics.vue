@@ -9,6 +9,8 @@
             <li>Male: {{getMale}}</li>
             <!-- Количество женчин в коллекции  -->
             <li>Female: {{getFemale}}</li>
+            <!-- Количество остальных в коллекции  -->
+            <li>Other: {{getOther}}</li>
             <!-- Выводим кого больше, мужчин или женщин  -->
             <li>
                 <!-- Одинаковое количество  -->
@@ -49,6 +51,11 @@ export default {
         // Высчитываем кого больше, выводим большее число
         genderLength(){
             return this.getFemale > this.getMale ? this.getFemale : this.getMale
+        },
+
+        // Количество остальных гендеров
+        getOther(){
+            return this.itemsLength - this.getFemale - this.getMale
         }
     }
 }

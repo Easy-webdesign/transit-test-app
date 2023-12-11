@@ -28,7 +28,7 @@ export default {
   getters: {
     // Получаем количество всех контактов
     getUsersLength(state){
-      return state.users.count
+      return state.users.length
     },
     // Получаем количество страниц относительно количеству отсортированных контактов
     getCountPageOfUsers(state){

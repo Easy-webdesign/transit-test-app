@@ -1,17 +1,7 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import { default as main } from './main';
+import { default as users } from './users';
 
-Vue.use(Vuex)
-
-export default new Vuex.Store({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
-})
+// Экспорт 2 store:
+// - main: общий для авторизованного пользователя
+// - users: для работы со списком контактов
+export default { main, users };

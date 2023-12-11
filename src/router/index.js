@@ -1,28 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Auth from '@/pages/Auth'
+import Contacts from '@/pages/Contacts'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
+// Задаем роута приложения для страниц авторизации и контактов
 const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+  { path: '/', name: 'auth', component: Auth},
+  { path: '/contacts', name: 'contacts', component: Contacts}
 ]
 
+// Создаем объект router 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
   routes
 })
 

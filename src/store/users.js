@@ -84,6 +84,11 @@ export default {
       // Возвращаем этот массив
       return nationals
     },
+
+    // Параметры сортировки
+    getSorts(state){
+      return state.sort
+    }
   },
 
   mutations: {
@@ -304,7 +309,7 @@ export default {
       // те контакты которые соответствуют
       // входящему значению
       if(value) {
-        const sorted = state.users
+        const sorted = [...state.users]
                               .sort((a, b) => {
                                 // Получаем полное имя текущего элемента
                                 const fullNameA = `${a.name.first} ${a.name.last}`;

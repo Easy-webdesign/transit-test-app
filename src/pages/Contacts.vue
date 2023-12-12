@@ -62,6 +62,18 @@ export default {
         // Слушатель переключения страницы
         page(value){
             this.changeSelectedPage(value);
+        },
+
+        // Слушатель изменения фильтров
+        // Необходим для того чтобы каждый раз при изменении фильтров
+        // страница переключалась на 1
+        sorts: {
+            // Обработчик
+            handler(val){
+                this.page = 1;
+            },
+            // Параметр, который прослушивает все значения массива либо объекта
+            deep: true
         }
     },
 
@@ -72,6 +84,7 @@ export default {
         ...mapGetters({
             items: 'getPageUsers',
             countPages: 'getCountPageOfUsers',
+            sorts: 'getSorts',
         })
     },
 
